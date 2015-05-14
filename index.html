@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Did They Vote For C-51</title>
+
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="css/site.css">
+
+  <script type="text/javascript" src="js/modernizr.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <img src="images/flag.svg" id="flag" alt="Canadian Flag" />
+      <h1 class="title">Did They Vote For C-51?</h1>
+      <p>The controversial anti-terrorism bill C-51 recently passed through a third vote in the House of Commons and is now headed to the Senate. Find out how your MP voted:</p>
+    </header>
+
+    <section id="lookup">
+      <form>
+        <fieldset id="location">
+          <label for="location">Use Your Location</label>
+          <a class="location button button-primary" id="location-submit" name="location"><img src="images/location.svg" class="location" />Check it</a>  
+        </fieldset>
+        <p id="or">or</p>
+        <fieldset>
+          <label for="postal-code">Postal Code</label>
+          <input type="text" name="postal-code" placeholder="A1A 1A1">
+          <button type="submit" id="postal-submit">Find Them</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="results">
+    </section>
+  </div>
+
+  <div class="info">
+    <div class="container">
+      <section>
+        <p>These are just some of the organizations that have spoken out against C-51:</p>
+        <ul>
+          <li><a href="http://www.amnesty.ca/news/news-releases/insecurity-and-human-rights-canada’s-proposed-national-security-laws-fall-short">Amnesty International</a></li>
+          <li><a href="https://bccla.org/2015/02/bill-c-51-is-unnecessary/">British Columbia Civil Liberties Association</a></li>
+          <li><a href="http://ccla.org/2015/02/01/ccla-responds-to-new-anti-terror-legislation-2015/">Canadian Civil Liberties Association</a></li>
+          <li><a href="http://cmla-acam.ca/cmla-published-briefing-note-on-bill-c-51/">Canadian Muslim Lawyers Association</a></li>
+          <li><a href="http://iclmg.ca/wp-content/uploads/sites/37/2015/03/Bill-C51-ICLMG-Paul-Champ.pdf">International Civil Liberties Monitoring Group</a></li>
+          <li><a href="http://liguedesdroits.ca/?p=2656">La Ligue des Droits et Libert</a>&eacute;s</li>
+          <li><a href="http://www.nccm.ca">National Council of Canadian Muslims</a></li>
+        </ul>
+        <p>More resources are available at <a href="https://stopc51.ca">#StopC51</a>.</p>
+      </section>
+    </div>
+  </div>
+
+  <div class="container">
+    <footer>
+      <p>There are no user tracking or analytics scripts on this site, but it does use JavaScript for the vote lookup.</p>
+      <p>Made by <a href="https://brandonevans.ca">Brandon Evans</a> with data from <a href="https://openparliament.ca">Open Parliament</a> and <a href="http://represent.opennorth.ca">Represent</a> and otherwise unaffiliated with any mentioned parties.</p>
+    </footer>
+  </div>
+
+  <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="js/mustache.js"></script>
+  <script type="text/javascript" src="js/site.js"></script>
+</body>
+</html>

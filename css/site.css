@@ -1,0 +1,56 @@
+header {
+  margin-top: 15rem;
+  text-align: center;
+}
+header p {
+  text-align: left;
+}
+img#flag {
+  width: 50px;
+  margin-bottom: 5rem;
+}
+
+#results {
+  border-bottom: 1px solid #CCC;
+  text-align: center;
+}
+form {
+  text-align: center;
+}
+fieldset {
+  display: inline;
+  margin-right: 2rem;
+}
+a.location {
+  padding-left: 15px;
+}
+img.location {
+  margin-right:10px;
+  margin-top:5px;
+  display:block;
+  height: 24px;
+  width: 24px;
+  float:left;
+}
+p#or {
+  display: inline;
+  font-style: italic;
+  margin-right: 2rem;
+}
+
+div.info {
+  margin: 2rem 0;
+  padding: 2rem 0;
+  background-color: #EEE;
+}
+div.info p:last-child {
+  margin-bottom: 0;
+}
+
+footer {
+  margin-bottom: 2rem;
+  color: #999;
+}
+footer p {
+  margin-bottom: 0;
+}

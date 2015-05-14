@@ -1,0 +1,14 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Brandon Evans -- creator -- @interstateone
+
+#THANKS
+
+    Open North and OpenParliament.ca for the data and API
+
+# TECHNOLOGY COLOPHON
+
+    Skeleton, jQuery, Modernizr, Mustache
