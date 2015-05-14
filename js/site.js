@@ -1577,12 +1577,35 @@ function htmlFromRepresentatives(representatives) {
   return representatives.map(representativeViewModel).map(renderRepresentative).join('');
 }
 
+function isScrolledIntoView($element) {
+  var $window = $(window);
+
+  var docViewTop = $window.scrollTop();
+  var docViewBottom = docViewTop + $window.height();
+
+  var elementTop = $element.offset().top;
+  var elementBottom = elementTop + $element.height();
+
+  return ((docViewTop < elementTop) && (docViewBottom > elementBottom));
+}
+
+function scrollToElementIfNeeded($element) {
+  if (!isScrolledIntoView($element)) {
+    $('html, body').animate({
+        scrollTop: $element.offset().top - 50
+    }, 250);
+  }
+}
+
 function fetchRepresentativeWithPostalCode(postalCode) {
   $.get('http://represent.opennorth.ca/postcodes/' + postalCode + '/?sets=federal-electoral-districts')
   .done(function(data) {
     var representatives = data['representatives_concordance'];
     var resultHTML = htmlFromRepresentatives(representatives);
-    $('section#results').empty().append(resultHTML);
+    
+    var $results = $('section#results');
+    $results.empty().append(resultHTML);
+    scrollToElementIfNeeded($results);
   })
   .fail(function() {
     console.log('There was an error fetching postal code data.');
@@ -1597,10 +1620,13 @@ function fetchRepresentativeWithPosition(position) {
   .done(function(data) {
     var representatives = data['objects'];
     var resultHTML = htmlFromRepresentatives(representatives);
-    $('section#results').empty().append(resultHTML);
+    
+    var $results = $('section#results');
+    $results.empty().append(resultHTML);
+    scrollToElementIfNeeded($results);
   })
   .fail(function() {
-    console.log('There was an error fetching postal code data.');
+    console.log('There was an error fetching position data.');
   });
 }
 

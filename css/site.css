@@ -2,6 +2,11 @@ header {
   margin-top: 15rem;
   text-align: center;
 }
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  header {
+    margin-top: 5rem;
+  }
+}
 header p {
   text-align: left;
 }
