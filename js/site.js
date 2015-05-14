@@ -1574,7 +1574,12 @@ function getLocation() {
 }
 
 function htmlFromRepresentatives(representatives) {
-  return representatives.map(representativeViewModel).map(renderRepresentative).join('');
+  var repHTML = '';
+  if (representatives.length > 1) {
+    repHTML = '<em class="note">Your postal code contains more than one riding.</em>';
+  }
+  repHTML += representatives.map(representativeViewModel).map(renderRepresentative).join('');
+  return repHTML;
 }
 
 function isScrolledIntoView($element) {

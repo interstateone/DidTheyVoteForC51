@@ -43,6 +43,18 @@ p#or {
   margin-right: 2rem;
 }
 
+.note {
+  display: inline-block;
+  margin: 2rem 0;
+  color: #999;
+}
+div.representative {
+  margin-bottom: 2rem;
+}
+div.representative p {
+  margin-bottom: 1rem;
+}
+
 div.info {
   margin: 2rem 0;
   padding: 2rem 0;
