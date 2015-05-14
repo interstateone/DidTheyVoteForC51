@@ -1530,7 +1530,7 @@ var ballots = [
     name: "Steven Fletcher"
   }
 ];
-var representativeTemplate = '<div class="representative"><h3>Your MP, {{ name }}, {{ vote }}</h3><p>Tell them how you feel about that:</p><a class="button" href="mailto:{{ email }}">Email</a>{{ #twitter }} <a class="button" target="_blank" href="https://twitter.com/intent/tweet?text={{ twitter }} ">Twitter</a>{{ /twitter }}</div>';
+var representativeTemplate = '<div class="representative"><h3>Your MP, {{ name }}, {{ vote }}.</h3><p>Tell them how you feel about that:</p><a class="button" href="mailto:{{ email }}">Email</a>{{ #twitter }} <a class="button" target="_blank" href="https://twitter.com/intent/tweet?text={{ twitter }} ">Twitter</a>{{ /twitter }}</div>';
 
 function representativeViewModel(repJSON) {
   var repsBallot = ballots.filter(function(eachBallot) {
