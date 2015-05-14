@@ -40,6 +40,11 @@
 
     <section id="results">
     </section>
+
+    <section id="social">
+      <p>Spread the word.<p>
+      <p><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Check%20how%20your%20MP%20voted%20on%20%23C51%2C%20then%20let%20them%20know%20how%20you%20feel%20about%20it.&url=http%3A%2F%2Fdidtheyvoteforc51.ca" data-dnt="true">Tweet</a></p>
+    </section>
   </div>
 
   <div class="info">
@@ -80,7 +85,22 @@
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
-
+  </script>
+  <script>
+    window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      t._e = [];
+      t.ready = function(f) {
+        t._e.push(f);
+      };
+      return t;
+    }(document, "script", "twitter-wjs"));
   </script>
 </body>
 </html>

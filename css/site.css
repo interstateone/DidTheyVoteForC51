@@ -55,6 +55,18 @@ div.representative p {
   margin-bottom: 1rem;
 }
 
+section#social {
+  margin-top: 2rem;
+  text-align: center;
+  color: #999;
+}
+section#social p {
+  margin: 1rem;
+}
+section#social iframe {
+  vertical-align: middle;
+}
+
 div.info {
   margin: 2rem 0;
   padding: 2rem 0;
