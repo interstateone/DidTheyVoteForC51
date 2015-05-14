@@ -1,0 +1,16 @@
+script: ./build.sh
+deploy:
+    provider: s3
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: didtheyvoteforc51.ca
+    endpoint: didtheyvoteforc51.ca.s3-website-us-east-1.amazonaws.com
+    region: us-east-1
+
+    skip_cleanup: true
+    local-dir: build
+    acl: public_read
+    detect_encoding: true
+notifications:
+    email:
+        on_failure: always
