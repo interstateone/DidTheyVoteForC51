@@ -1530,7 +1530,7 @@ var ballots = [
     name: "Steven Fletcher"
   }
 ];
-var representativeTemplate = '<div class="representative"><h3>Your MP, {{ name }}, {{ vote }}.</h3><p>Tell them how you feel about that:</p><a class="button" href="mailto:{{ email }}">Email</a>{{ #twitter }} <a class="button" target="_blank" href="https://twitter.com/intent/tweet?text={{ twitter }} ">Twitter</a>{{ /twitter }}</div>';
+var representativeTemplate = '<div class="representative"><h3>Your MP, {{ name }}, {{ vote }}.</h3><p>Tell them how you feel about that:</p><a class="button email-rep" href="mailto:{{ email }}">Email</a>{{ #twitter }} <a class="button tweet-rep" target="_blank" href="https://twitter.com/intent/tweet?text={{ twitter }} ">Twitter</a>{{ /twitter }}</div>';
 
 function representativeViewModel(repJSON) {
   var repsBallot = ballots.filter(function(eachBallot) {
@@ -1602,6 +1602,16 @@ function scrollToElementIfNeeded($element) {
   }
 }
 
+function attachClickHandlersToContactButtons() {
+  $('.email-rep').click(function(event) {
+    _gaq.push(['_trackEvent', 'contact', 'email']);
+  });
+
+  $('.tweet-rep').click(function(event) {
+    _gaq.push(['_trackEvent', 'contact', 'twitter']);
+  });
+}
+
 function fetchRepresentativeWithPostalCode(postalCode) {
   $.get('http://represent.opennorth.ca/postcodes/' + postalCode + '/?sets=federal-electoral-districts')
   .done(function(data) {
@@ -1614,6 +1624,7 @@ function fetchRepresentativeWithPostalCode(postalCode) {
     var $results = $('section#results');
     $results.empty().append(resultHTML);
     scrollToElementIfNeeded($results);
+    attachClickHandlersToContactButtons();
   })
   .fail(function() {
     console.log('There was an error fetching postal code data.');
@@ -1632,6 +1643,7 @@ function fetchRepresentativeWithPosition(position) {
     var $results = $('section#results');
     $results.empty().append(resultHTML);
     scrollToElementIfNeeded($results);
+    attachClickHandlersToContactButtons();
   })
   .fail(function() {
     console.log('There was an error fetching position data.');
