@@ -1600,7 +1600,10 @@ function scrollToElementIfNeeded($element) {
 function fetchRepresentativeWithPostalCode(postalCode) {
   $.get('http://represent.opennorth.ca/postcodes/' + postalCode + '/?sets=federal-electoral-districts')
   .done(function(data) {
-    var representatives = data['representatives_concordance'];
+    var representatives = data['representatives_concordance'] || [];
+    if (data['representatives_centroid']) {
+      Array.prototype.push.apply(representatives, data['representatives_centroid']);  
+    }
     var resultHTML = htmlFromRepresentatives(representatives);
     
     var $results = $('section#results');
